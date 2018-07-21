@@ -197,6 +197,9 @@
             },
             ".mbr-text DIV": {
               "color": "#000000"
+            },
+            ".mbr-text B": {
+              "color": "#000000"
             }
           },
           "_name": "content1",
