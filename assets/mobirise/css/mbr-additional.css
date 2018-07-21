@@ -1474,6 +1474,9 @@ body {
 .cid-qYl1FqGGGs blockquote {
   color: #767676;
 }
+.cid-qYl1FqGGGs .mbr-text DIV {
+  color: #000000;
+}
 .cid-qYl2c8ROVH {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -1621,6 +1624,12 @@ body {
 .cid-qYl6GbOf4w .mbr-text {
   color: #767676;
 }
+.cid-qYl6GbOf4w .mbr-text DIV {
+  color: #000000;
+}
+.cid-qYl6GbOf4w .mbr-text B {
+  color: #000000;
+}
 .cid-qYm67ZefOU {
   padding-top: 120px;
   padding-bottom: 60px;
@@ -1628,6 +1637,9 @@ body {
 }
 .cid-qYm67ZefOU .mbr-text {
   color: #767676;
+}
+.cid-qYm67ZefOU .mbr-text DIV {
+  color: #000000;
 }
 .cid-qYm76L5OEa {
   padding-top: 60px;

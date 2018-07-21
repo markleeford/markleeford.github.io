@@ -194,6 +194,9 @@
             "background-color": "@bgColor",
             ".mbr-text, blockquote": {
               "color": "#767676"
+            },
+            ".mbr-text DIV": {
+              "color": "#000000"
             }
           },
           "_name": "content1",
@@ -316,7 +319,7 @@
             }
           },
           "_name": "content9",
-          "_customHTML": "<section class=\"mbr-section article content9\" group=\"Article\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Text Width\" name=\"innerWidth\" min=\"50\" max=\"100\" step=\"1\" value=\"100\">\n        <input type=\"range\" inline title=\"Line Width\" name=\"lineLength\" min=\"10\" max=\"100\" step=\"1\" value=\"25\">\n        <input type=\"color\" title=\"Line Color\" name=\"lineColor\" value=\"#149dcc\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"inner-container\" mbr-style=\"{'width': innerWidth + '%'}\">\n            <hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n            <div class=\"section-text align-center mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".section-text\" mbr-text><b>There is no typical ASJ member. <br></b><br>Some of us are Japanese. <br>Others of us have lived in Japan for decades. <br>And yet others are just passing through. <br><br><b>We are a family</b> of doctors, business people, diplomats, professors, <br>students, artists, and just about anyone else that you can imagine. <br><br><b>What unites us</b>---as with our founders 150 years ago---<b>is our spirit <br>of exploration</b> and natural curiosity about Asia, most especially, Japan. <br>We are hooked on <b>the excitment of discovering</b>, and of <b>sharing discoveries.&nbsp;</b><br><br><b>If you think ASJ might be for you, please contact us. </b><br><b>We will be delighted to listen to your interests and tell you more about ASJ.</b><br><br><b>info@asjapan.org&nbsp;</b></div>\n            <hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n        </div>\n        </div>\n</section>",
+          "_customHTML": "<section class=\"mbr-section article content9\" group=\"Article\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Text Width\" name=\"innerWidth\" min=\"50\" max=\"100\" step=\"1\" value=\"100\">\n        <input type=\"range\" inline title=\"Line Width\" name=\"lineLength\" min=\"10\" max=\"100\" step=\"1\" value=\"25\">\n        <input type=\"color\" title=\"Line Color\" name=\"lineColor\" value=\"#149dcc\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#ffffff\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"inner-container\" mbr-style=\"{'width': innerWidth + '%'}\">\n            <hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n            <div class=\"section-text align-center mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".section-text\" mbr-text><b>There is no typical ASJ member. <br></b><br>Some of us are Japanese. <br>Others of us have lived in Japan for decades. <br>And yet others are just passing through. <br><br><b>We are a family</b> of doctors, business people, diplomats, professors, <br>students, artists, and just about anyone else that you can imagine. <br><br><b>What unites us</b>---as with our founders 150 years ago---<b>is our spirit <br>of exploration</b> and natural curiosity about Asia, most especially, Japan. <br>We are hooked on <b>the excitment of discovery</b>, and of <b>sharing discoveries.&nbsp;</b><br><br><b>If you think ASJ might be for you, please contact us. </b><br><b>We will be delighted to listen to your interests and tell you more about ASJ.</b><br><br><b>info@asjapan.org&nbsp;</b></div>\n            <hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n        </div>\n        </div>\n</section>",
           "_cid": "qYgKLatYwl",
           "_protectedParams": [],
           "_global": false,
@@ -450,6 +453,12 @@
             "background-color": "@bgColor",
             ".mbr-text": {
               "color": "#767676"
+            },
+            ".mbr-text DIV": {
+              "color": "#000000"
+            },
+            ".mbr-text B": {
+              "color": "#000000"
             }
           },
           "_name": "content3",
@@ -468,6 +477,9 @@
             "background-color": "@bgColor",
             ".mbr-text": {
               "color": "#767676"
+            },
+            ".mbr-text DIV": {
+              "color": "#000000"
             }
           },
           "_name": "content3",
