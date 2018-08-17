@@ -8,6 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/images-128x130.png" type="image/x-icon">
   <meta name="description" content="Member page">
+  <meta name="google-signin-client_id" content="726577534279-tqq09tqjmrcb06cvupdc0knv8hd47ha4.apps.googleusercontent.com">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
   <title>member</title>
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -19,8 +22,45 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
-  
-  
+  <script>
+	  function onSuccess(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    gapi.client.load('plus', 'v1', function () {
+        var request = gapi.client.plus.people.get({
+            'userId': 'me'
+        });
+        //Display the user details
+        request.execute(function (resp) {
+            var profileHTML = '<div class="profile"><div class="head">Welcome '+resp.name.givenName+'! <a href="javascript:void(0);" onclick="signOut();">Sign out</a></div>';
+            profileHTML += '<img src="'+resp.image.url+'"/><div class="proDetails"><p>'+resp.displayName+'</p><p>'+resp.emails[0].value+'</p><p>'+resp.gender+'</p><p>'+resp.id+'</p><p><a href="'+resp.url+'">View Google+ Profile</a></p></div></div>';
+            $('.userContent').html(profileHTML);
+            $('#gSignIn').slideUp('slow');
+        });
+    });
+}
+function onFailure(error) {
+    alert(error);
+}
+function renderButton() {
+    gapi.signin2.render('gSignIn', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+    });
+}
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        $('.userContent').html('');
+        $('#gSignIn').slideDown('slow');
+    });
+}
+	</script>
+	
 </head>
 <body>
   <section class="mbr-section content4 cid-r0SnjuPaQ3" id="content4-1w">
@@ -30,17 +70,22 @@
     <div class="container">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-2">Download Transactions.<br><br>Learn about our speakers. &nbsp;<div><br></div><div>Catch-up on lectures.</div></h2>
-                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5"><strong><br></strong><br><strong>LOGIN HERE</strong><br><br><br><strong><br></strong></h3>
-                
-            </div>
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">Download Transactions.<br><br>Learn about our speakers. &nbsp;<div><br></div><div>Catch-up on lectures.<br><br></div></h2>
+		 
+		<center>    
+		<!-- HTML for render Google Sign-In button -->
+                <div id="gSignIn"></div>
+                <!-- HTML for displaying user details -->
+                <div class="userContent"></div>
+	        </center> 
+		    
+		</div>
         </div>
     </div>
 </section>
 
-<section class="engine"><a href="https://mobiri.se/s">bootstrap themes</a></section><section class="mbr-section form1 cid-qYZ31T11z2" id="form1-1t">
+<section class="engine"><a href="https://mobiri.se/v">free html templates</a></section><section class="mbr-section form1 cid-qYZ31T11z2" id="form1-1t">
 
-    
 
     
     <div class="container">
@@ -65,7 +110,7 @@ Tokyo 152-8558  JAPAN
 Email: info@asjapan.org
 Phone/Fax: +81 (0)3 3795 2371 </div>
             
-                    <form class="mbr-form" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="BT1NCNr18/axPN4CvwhYS7KFme0KH2PfQt4xB2GJpJ7YupIRW5sGP327aSnyTVVEgUedDT3kS/OiC1DJprcCJFvz5nlFh/FFkMzffDqjy7Da1HkOksqwVqB6J/ud3Feb" data-form-field="Email">
+                    <form class="mbr-form" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="A8MEFeMd1VIK46gn1hBDLqhT1brpl78pSrTlP6hlv2k85Cgxg1OJlygJruFcZCt0SPtWThTklu+ov+dwXX3lK5ufd77Hs9GKrZ+qY2BqTfo8ex74i3c/612BqT8RtUcj" data-form-field="Email">
                         <div class="row row-sm-offset">
                             <div class="col-md-4 multi-horizontal" data-for="name">
                                 <div class="form-group">
@@ -160,7 +205,8 @@ Phone/Fax: +81 (0)3 3795 2371 </div>
   <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid/formoid.min.js"></script>
-  
+
+
   
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
     <input name="animation" type="hidden">
