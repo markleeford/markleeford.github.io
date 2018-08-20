@@ -125,11 +125,11 @@ function showUrl(url) {
 // Passes search URL and callbacks to CORS function
 function searchSolr(query, coreArea="", start=0) {
     var base = SOLR_CONFIG["server"];
-    var fields = ["title",
-                  "origin",
-                  "datePublished",
-                  "resourceMap"].toString();
-    var params = "fl=" + fields + "&defType=edismax&wt=json";
+    var fields = ["creator",
+                  "creation_date",
+                  "resourcename",
+                  "resourcename_str"].toString();
+    var params = "fl=" + fields ;
     var limit = "&rows=" + SOLR_CONFIG["limit"];
     start = "&start=" + start;
     query = "&q=" + SOLR_CONFIG["filter"] + " " + query;
