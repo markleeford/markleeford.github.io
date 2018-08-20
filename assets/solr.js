@@ -132,7 +132,7 @@ function searchSolr(query, coreArea="", start=0) {
     var params = "fl=" + fields ;
     var limit = "&rows=" + SOLR_CONFIG["limit"];
     start = "&start=" + start;
-    query = "&q="  + query;
+    query = "&wt=json&q="  + query;
     if (coreArea && coreArea !== "any") {
         params += '&fq=keywords:"' + coreArea + '"';
     }
