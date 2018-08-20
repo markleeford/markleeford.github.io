@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Demo Solr Search</title>
+	<meta charset="utf-8" />
+	<script src="https://use.fontawesome.com/a989b590e9.js"></script>
+  <link href="assets/search.css" rel="stylesheet" type="text/css">
+  <script src="assets/cors.js"></script>
+  <script src="assets/pagination.js"></script>
+  <script src="assets/solr.js"></script>
+</head>
+<body>
+	<p>Please enter a search term. This will search all the sample files on the server (bulletins and word docs)</p>
+	<form id="dataSearchForm" name="dataSearchForm">
+		<label for="coreArea">Search Category (only 1 for now)</label><br>
+	    <select name="coreArea" id="coreArea">
+		    <option value="any">Any</option>
+		    <option value="asj">ASJ Global</option>
+	    </select><br><br>
+		<input class="search-input" name="q" placeholder="Enter search term" type="text">
+		<input type="submit" value="Search">
+	</form>
+	<div class="loading" id="loading-div">
+		<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+		<span class="sr-only">Loading...</span>
+	</div>
+	<p>Search URL will be written below:</p>
+	<p id="searchUrl"></p>
+	<p>Search results will be written below:</p>
+
+
+	<div class="resultCount" id="resultCount"></div>
+	<div id="searchResults"></div>
+	<div class="pagination" id="pagination"></div>
+</body>
+</html>
