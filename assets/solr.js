@@ -3,7 +3,7 @@
 "use strict";
 
 var SOLR_CONFIG = {
-    "server": "https://139.162.44.171/solr/asj/select?",  // Solr server
+    "server": "http://localhost:8983/solr/asj/select?",  // Solr server
     "filter": "knb-lter-bnz",  // Filter results for an organization or user
     "limit": 10,  // Max number of results to retrieve per page
     "resultsElementId": "searchResults",  // Element to contain results
