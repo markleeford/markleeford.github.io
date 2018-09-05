@@ -154,16 +154,8 @@ window.onload = function() {
         query = "";  // default for empty query
     }
 
-    var areas = document.getElementById("coreArea");
-    for (var i=0; i < areas.length; i++) {
-        if (coreArea == areas[i].value) {
-            areas[i].selected = true;
-            break;
-        }
-    }
-
     if (!start) {
         start = 0;
     }
-    searchSolr(query, coreArea, start);
+    searchSolr(query, "", start);
 };
