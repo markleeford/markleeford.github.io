@@ -25,9 +25,7 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-pdf_docinfo_creator",
-              "creation_date",
-              "xmptpg_npages
+
 // Parse Solr search results into HTML
 function parseSolrResults(resultJson) {
     var docs = resultJson["response"]["docs"];
