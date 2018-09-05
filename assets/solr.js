@@ -3,6 +3,7 @@
 "use strict";
 
 var SOLR_CONFIG = {
+  "sname":"http://139.162.44.171"
     "server": "http://139.162.44.171:8983/solr/asj/select?",  // Solr server
     "filter": "knb-lter-bnz",  // Filter results for an organization or user
     "limit": 10,  // Max number of results to retrieve per page
@@ -35,10 +36,7 @@ function parseSolrResults(resultJson) {
         var creator = doc["pdf_docinfo_creator"].join(", ") + " ";
           var pages = doc["xmptpg_npages"].join(" pages , ") + " ";
         var create_date = "(Created Date:  " + doc["creation_date"].slice(0, 10) + ")";
-        var link = doc["resourceMap"][0];
-        if (link.slice(0, 4) === "doi:") {
-            link = "http://dx.doi.org/" + link.slice(4);
-        }
+      var link = "http://139.162.44.171/" ;
         var title = '<a rel="external" href="' + link + '" target="_blank">' +
                     doc["resourcename"].trim() + '</a>';
         var row = '<p><span class="dataset-title">' + title +
