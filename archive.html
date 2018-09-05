@@ -60,12 +60,12 @@
 
 
                     <form id="dataSearchForm" name="dataSearchForm">
-                      <label for="coreArea">Search Category (only 1 for now)</label><br>
-                        <select name="coreArea" id="coreArea">
+
+                        <select name="coreArea" id="coreArea" display="hidden">
                           <option value="any">Any</option>
                           <option value="asj">ASJ Global</option>
                         </select><br><br>
-                      <input class="search-input" name="q" placeholder="Enter search term" type="text" value="*">
+                      <input class="search-input" name="q" placeholder="Enter search term" type="text" value="">
                       <input type="submit" value="Search">
                     </form>
                     <div class="loading" id="loading-div">
