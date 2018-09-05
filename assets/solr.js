@@ -25,23 +25,26 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
-
+pdf_docinfo_creator",
+              "creation_date",
+              "xmptpg_npages
 // Parse Solr search results into HTML
 function parseSolrResults(resultJson) {
     var docs = resultJson["response"]["docs"];
     var html = [];
     for (var i = 0; i < docs.length; i++) {
         var doc = docs[i];
-        var names = doc["origin"].join(", ") + " ";
-        var date = "(Published " + doc["datePublished"].slice(0, 10) + ")";
+        var creator = doc["pdf_docinfo_creator"].join(", ") + " ";
+          var pages = doc["xmptpg_npages"].join(" pages , ") + " ";
+        var create_date = "(Created Date:  " + doc["creation_date"].slice(0, 10) + ")";
         var link = doc["resourceMap"][0];
         if (link.slice(0, 4) === "doi:") {
             link = "http://dx.doi.org/" + link.slice(4);
         }
         var title = '<a rel="external" href="' + link + '" target="_blank">' +
-                    doc["title"].trim() + '</a>';
+                    doc["resourcename"].trim() + '</a>';
         var row = '<p><span class="dataset-title">' + title +
-                  '</span><br><span class="dataset-author">' + names + date +
+                  '</span><br><span class="dataset-author">' + creator +pages+ create_date +
                   '</span></p>';
         html.push(row);
     }
@@ -125,10 +128,9 @@ function showUrl(url) {
 // Passes search URL and callbacks to CORS function
 function searchSolr(query, coreArea="", start=0) {
     var base = SOLR_CONFIG["server"];
-    var fields = ["creator",
+    var fields = ["pdf_docinfo_creator",
                   "creation_date",
-                  "resourcename",
-                  "resourcename_str"].toString();
+                  "xmptpg_npages"].toString();
     var params = "fl=" + fields ;
     var limit = "&rows=" + SOLR_CONFIG["limit"];
     start = "&start=" + start;
