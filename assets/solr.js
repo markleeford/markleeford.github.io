@@ -33,8 +33,8 @@ function parseSolrResults(resultJson) {
     var html = [];
     for (var i = 0; i < docs.length; i++) {
         var doc = docs[i];
-        var creator = doc["pdf_docinfo_creator"].join(", ") + " ";
-          var pages = doc["xmptpg_npages"].join(" pages , ") + " ";
+        var creator = doc["pdf_docinfo_creator"] + ",  ";
+          var pages = doc["xmptpg_npages"] + " pages,  ";
         var create_date = "(Created Date:  " + doc["creation_date"].slice(0, 10) + ")";
       var link = "http://139.162.44.171/" ;
         var title = '<a rel="external" href="' + link + '" target="_blank">' +
