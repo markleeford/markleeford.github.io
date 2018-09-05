@@ -125,18 +125,19 @@ function showUrl(url) {
 // Passes search URL and callbacks to CORS function
 function searchSolr(query, coreArea="", start=0) {
     var base = SOLR_CONFIG["server"];
-    var fields = ["creator",
-                  "creation_date",
-                  "resourcename",
-                  "resourcename_str"].toString();
-    var params = "fl=" + fields ;
+    //var fields = ["creator",
+    //              "creation_date",
+    //              "resourcename",
+    //              "resourcename_str"].toString();
+    //var params = "fl=" + fields ;
     var limit = "&rows=" + SOLR_CONFIG["limit"];
     start = "&start=" + start;
     query = "&wt=json&q="  + query;
     if (coreArea && coreArea !== "any") {
         params += '&fq=keywords:"' + coreArea + '"';
     }
-    var url = base + params + limit + start + query;
+  //  var url = base + params + limit + start + query; // this is the old url that specified columns
+      var url = base + limit + start + query;
     showUrl(url);
     show_loading(true);
     makeCorsRequest(url, successCallback, errorCallback);
