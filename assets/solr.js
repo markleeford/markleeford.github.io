@@ -38,7 +38,7 @@ function parseSolrResults(resultJson) {
         var create_date = "(Created Date:  " + doc["creation_date"].slice(0, 10) + ")";
       var link = "http://139.162.44.171/" ;
         var title = '<a rel="external" href="' + link + '" target="_blank">' +
-                    doc["id"] '</a>';
+                    doc["id"] +'</a>';
         var row = '<p><span class="dataset-title">' + title +
                   '</span><br><span class="dataset-author">' + creator +pages+ create_date +
                   '</span></p>';
