@@ -18,21 +18,21 @@
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
+
+
+
 </head>
 <body>
   <section class="mbr-section info1 cid-r0SqIHGeFF" id="info1-21">
 
-    
 
-    
+
+
     <div class="container">
         <div class="row justify-content-center content-row">
             <div class="media-container-column title col-12 col-lg-7 col-md-6">
-                
-                
+
+
             </div>
             <div class="media-container-column col-12 col-lg-3 col-md-4">
                 <div class="mbr-section-btn align-right py-4"><a class="btn btn-white-outline display-4" href="page2.html">RULES OF ASJ</a></div>
@@ -43,7 +43,7 @@
 
 <section class="engine"><a href="https://mobiri.se/j">website templates</a></section><section class="mbr-section content4 cid-r0Soq2Ez6E" id="content4-1y">
 
-    
+
 
     <div class="container">
         <div class="media-container-row">
@@ -51,7 +51,25 @@
                 <h2 class="align-center pb-3 mbr-fonts-style display-2">Find anything from here.</h2>
                 <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
                     For example, enter a topic, name of speaker, or year of interest.</h3>
-                
+
+
+                    <form id="dataSearchForm" name="dataSearchForm">
+                      <label for="coreArea">Search Category (only 1 for now)</label><br>
+                        <select name="coreArea" id="coreArea">
+                          <option value="any">Any</option>
+                          <option value="asj">ASJ Global</option>
+                        </select><br><br>
+                      <input class="search-input" name="q" placeholder="Enter search term" type="text" value="*">
+                      <input type="submit" value="Search">
+                    </form>
+                    <div class="loading" id="loading-div">
+                      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                    <p>Search URL will be written below:</p>
+                    <p id="searchUrl"></p>
+                    <p>Search Results: </p>
+
             </div>
         </div>
     </div>
@@ -59,9 +77,9 @@
 
 <section class="cid-r0SpSjHO18" id="footer1-1z">
 
-    
 
-    
+
+
 
     <div class="container">
         <div class="media-container-row content text-white">
@@ -103,7 +121,7 @@
                     </p>
                 </div>
                 <div class="col-md-6">
-                    
+
                 </div>
             </div>
         </div>
@@ -118,8 +136,8 @@
   <script src="assets/smoothscroll/smooth-scroll.js"></script>
   <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  
-  
+
+
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
     <input name="animation" type="hidden">
   </body>
