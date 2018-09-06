@@ -56,6 +56,7 @@ function showPageLinks(total, limit, showPages, currentStart, domElementId) {
     }
 
     var link_list = [];
+    link_list.push("<div class="align-center">");
     link_list.push(makePageLink(currentUrl, currentStart, 0, "&laquo;"));
     for (var i = startPage; i <= endPage; i++) {
         var startIndex = (i - 1) * limit;
@@ -64,9 +65,10 @@ function showPageLinks(total, limit, showPages, currentStart, domElementId) {
     var lastIndex = (numPages - 1) * limit;
     link_list.push(
         makePageLink(currentUrl, currentStart, lastIndex, "&raquo;"));
+          link_list.push("</div>");
 
-    //var html = link_list.join("");
-    var html = "<div class="align-center">" + link_list .join("")+ "</div>";
+    var html = link_list.join("");
+
     document.getElementById(domElementId).innerHTML = html;
 }
 
