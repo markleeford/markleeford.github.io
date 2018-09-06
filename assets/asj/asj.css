@@ -3,6 +3,14 @@
       justify-content: center;
 }
 
+.dataset-title a
+{
+     font-size: 1.5em;
+      text-decoration: bold;
+     color: "navy"; 
+
+}
+
 .Search {
   position: relative;
   display: flex;
