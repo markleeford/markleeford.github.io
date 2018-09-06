@@ -37,9 +37,9 @@ function parseSolrResults(resultJson) {
           var pages = doc["xmptpg_npages"] + " pages,  ";
         var create_date = "<br>(Created Date:  " + doc["creation_date"].slice(0, 10) + ")";
       var link = "http://139.162.44.171/"+doc["id"] .replace('/var/www/asj/','') ;
-        var title = '<a class="result-title" rel="external" href="' + link + '" target="_blank">' +
+        var title = '<a rel="external" href="' + link + '" target="_blank">' +
                     doc["id"] .split("/").pop()+'</a>';
-        var row = '<p><span class="dataset-title">' + title +
+        var row = '<p><span class="result-title">' + title +
                   '</span><br><span class="dataset-author">' + creator +pages+ create_date +
                   '</span></p>';
         html.push(row);
