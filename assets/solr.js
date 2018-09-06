@@ -33,12 +33,12 @@ function parseSolrResults(resultJson) {
     var html = [];
     for (var i = 0; i < docs.length; i++) {
         var doc = docs[i];
-        var creator = doc["pdf_docinfo_creator"] + ",  ";
+        var creator = doc["author"] + ",  ";
           var pages = doc["xmptpg_npages"] + " pages,  ";
-        var create_date = "(Created Date:  " + doc["creation_date"].slice(0, 10) + ")";
-      var link = "http://139.162.44.171/" ;
+        var create_date = "<br>(Created Date:  " + doc["creation_date"].slice(0, 10) + ")";
+      var link = "http://139.162.44.171/"+doc["id"] .replace('/var/www/asj/','') ;
         var title = '<a rel="external" href="' + link + '" target="_blank">' +
-                    doc["id"] +'</a>';
+                    doc["id"] .split("/").pop()+'</a>';
         var row = '<p><span class="dataset-title">' + title +
                   '</span><br><span class="dataset-author">' + creator +pages+ create_date +
                   '</span></p>';
@@ -125,7 +125,7 @@ function showUrl(url) {
 function searchSolr(query, coreArea="", start=0) {
     var base = SOLR_CONFIG["server"];
     var fields = ["id",
-      "pdf_docinfo_creator",
+      "author",
                   "creation_date",
                   "xmptpg_npages"].toString();
     var params = "fl=" + fields ;
