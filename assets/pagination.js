@@ -65,7 +65,8 @@ function showPageLinks(total, limit, showPages, currentStart, domElementId) {
     link_list.push(
         makePageLink(currentUrl, currentStart, lastIndex, "&raquo;"));
 
-    var html = link_list.join("");
+    //var html = link_list.join("");
+    var html = "<div class="align-center">" + link_list + "</div>";
     document.getElementById(domElementId).innerHTML = html;
 }
 
