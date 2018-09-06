@@ -1,3 +1,8 @@
+.center-pagination
+{
+      justify-content: center;
+}
+
 .Search {
   position: relative;
   display: flex;
