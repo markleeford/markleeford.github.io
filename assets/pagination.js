@@ -1,7 +1,5 @@
 "use strict";
-
-
-// https://stackoverflow.com/questions/5999118/add-or-update-query-string-parameter
+ // https://stackoverflow.com/questions/5999118/add-or-update-query-string-parameter
 function updateQueryStringParameter(uri, key, value) {
   var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
   var separator = uri.indexOf("?") !== -1 ? "&" : "?";
@@ -12,9 +10,7 @@ function updateQueryStringParameter(uri, key, value) {
     return uri + separator + key + "=" + value;
   }
 }
-
-
-function makePageLink(currentUrl, currentStart, start, linkText) {
+ function makePageLink(currentUrl, currentStart, start, linkText) {
     var uri = updateQueryStringParameter(currentUrl, "start", start);
     var tagStart = '<a href="';
     if (currentStart == start) {
@@ -26,24 +22,20 @@ function makePageLink(currentUrl, currentStart, start, linkText) {
     var link = tagStart + uri + '">' + linkText + '</a>';
     return link;
 }
-
-
-// Creates links to additional pages of search results.
+ // Creates links to additional pages of search results.
 // Requires a start URI argument indicating start index of search results
 // as passed to the server providing the search results.
 function showPageLinks(total, limit, showPages, currentStart, domElementId) {
     if (total <= limit) {
         return "";
     }
-
-    var currentUrl = window.location.href;
+     var currentUrl = window.location.href;
     var numPages = Math.ceil(total / limit);
     var currentPage = Math.floor(currentStart / limit) + 1;
     var pagesLeftRight = Math.floor(showPages / 2);
     var startPage = currentPage - pagesLeftRight;
     var endPage = currentPage + pagesLeftRight;
-
-    if (endPage > numPages) {
+     if (endPage > numPages) {
         endPage = numPages;
         startPage = endPage - showPages + 1;
     }
@@ -54,9 +46,7 @@ function showPageLinks(total, limit, showPages, currentStart, domElementId) {
             endPage = numPages;
         }
     }
-
-    var link_list = [];
-
+     var link_list = [];
     link_list.push(makePageLink(currentUrl, currentStart, 0, "&laquo;"));
     for (var i = startPage; i <= endPage; i++) {
         var startIndex = (i - 1) * limit;
@@ -65,14 +55,10 @@ function showPageLinks(total, limit, showPages, currentStart, domElementId) {
     var lastIndex = (numPages - 1) * limit;
     link_list.push(
         makePageLink(currentUrl, currentStart, lastIndex, "&raquo;"));
-
-
-    var html = link_list.join("");
+     var html = link_list.join("");
     document.getElementById(domElementId).innerHTML = html;
 }
-
-
-function escapeHtml(unsafe) {
+ function escapeHtml(unsafe) {
     return unsafe
          .replace(/&/g, "&amp;")
          .replace(/</g, "&lt;")
@@ -80,14 +66,11 @@ function escapeHtml(unsafe) {
          .replace(/"/g, "&quot;")
          .replace(/'/g, "&#039;");
 }
-
-
-function showResultCount(query, total, limitPerPage, currentStartIndex, domElementId) {
+ function showResultCount(query, total, limitPerPage, currentStartIndex, domElementId) {
     if (total == 0) {
         return;
     }
-
-    var s = "";
+     var s = "";
     if (total > 1) {
         s = "s";
     }
