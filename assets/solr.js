@@ -8,7 +8,7 @@ var SOLR_CONFIG = {
     "filter": "knb-lter-bnz",  // Filter results for an organization or user
     "limit": 10,  // Max number of results to retrieve per page
     "resultsElementId": "searchResults",  // Element to contain results
-    "urlElementId": "searchUrl",  // Element to display search URL
+    //"urlElementId": "searchUrl",  // Element to display search URL
     "countElementId": "resultCount",  // Element showing number of results
     "pagesElementId": "pagination",  // Element to display result page links
     "showPages": 5  // MUST BE ODD NUMBER! Max number of page links to show
@@ -137,7 +137,7 @@ function searchSolr(query, coreArea="", start=0) {
     }
     var url = base + params + limit + start + query; // this is the old url that specified columns
     //var url = base + limit + start + query;
-    showUrl(url);
+    //showUrl(url);
     show_loading(true);
     makeCorsRequest(url, successCallback, errorCallback);
 }
