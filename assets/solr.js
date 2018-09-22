@@ -4,7 +4,7 @@
 
 var SOLR_CONFIG = {
 
-    "server": "http://139.162.44.171:8983/solr/asj/select?",  // Solr server
+    "server": "http://172.105.193.75:8983/solr/asj/select?",  // Solr server
     "filter": "knb-lter-bnz",  // Filter results for an organization or user
     "limit": 10,  // Max number of results to retrieve per page
     "resultsElementId": "searchResults",  // Element to contain results
@@ -36,7 +36,7 @@ function parseSolrResults(resultJson) {
         var creator = doc["author"] + ",  ";
           var pages = doc["xmptpg_npages"] + " pages,  ";
         var create_date = "<br>(Created Date:  " + doc["creation_date"].slice(0, 10) + ")";
-      var link = "http://139.162.44.171/"+doc["id"] .replace('/var/www/asj/','') ;
+      var link = "http://172.105.193.75/"+doc["id"] .replace('/var/www/asj/','') ;
         var title = '<a rel="external" href="' + link + '" target="_blank">' +
                     doc["id"] .split("/").pop()+'</a>';
         var row = '<p><span class="result-title">' + title +
