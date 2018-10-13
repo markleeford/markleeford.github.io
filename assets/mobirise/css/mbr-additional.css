@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i);
 
 
@@ -20,7 +21,7 @@ body {
   line-height: 1.6;
 }
 .display-1 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 4.25rem;
 }
 .display-1 > .mbr-iconfont {
@@ -1373,7 +1374,7 @@ body {
   display: none;
 }
 .cid-qYg8J5Y9pS {
-  background-image: url("../../../assets/images/mbr-1920x1280.jpg");
+  background-image: url("../../../assets/images/japan-65380-2000x1500.jpg");
 }
 .cid-qYg8J5Y9pS h1 {
   color: #616161;
