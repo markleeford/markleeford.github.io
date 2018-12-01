@@ -38,7 +38,7 @@ function parseSolrResults(resultJson) {
         var create_date = "<br>(Created Date:  " + doc["creation_date"].slice(0, 10) + ")";
       var link = "http://172.105.193.75/"+doc["id"].replace('/var/www/asj/','') ;
         var title = '<a class="searchlink" rel="external" href="' + link + '" target="_blank">' +
-                    doc["id"] .split("/").pop()+ '[ ' + doc["title"].replace('.pdf','')+'] ' +'</a>';
+                    doc["title"]+ '</a>';
         var row = '<p><span class="result-title">' + title +
                   '</span><br><span class="dataset-author">' +pages+ create_date +
                   '</span></p>';
