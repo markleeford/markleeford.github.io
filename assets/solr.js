@@ -36,9 +36,9 @@ function parseSolrResults(resultJson) {
         var creator = doc["author"] + ",  ";
           var pages = doc["xmptpg_npages"] + " pages,  ";
         var create_date = "<br>(Created Date:  " + doc["creation_date"].slice(0, 10) + ")";
-      var link = "http://172.105.193.75/"+doc["id"] .replace('/var/www/asj/','') ;
+      var link = "http://172.105.193.75/"+doc["id"].replace('/var/www/asj/','') ;
         var title = '<a class="searchlink" rel="external" href="' + link + '" target="_blank">' +
-                    doc["id"] .split("/").pop()+'</a>';
+                    doc["id"] .split("/").pop()+ '[ ' + doc["title"].replace('.pdf','')+'] ' +'</a>';
         var row = '<p><span class="result-title">' + title +
                   '</span><br><span class="dataset-author">' +pages+ create_date +
                   '</span></p>';
@@ -124,7 +124,7 @@ function showUrl(url) {
 // Passes search URL and callbacks to CORS function
 function searchSolr(query, coreArea="", start=0) {
     var base = SOLR_CONFIG["server"];
-    var fields = ["id","creation_date",
+    var fields = ["id","creation_date","title",
                   "xmptpg_npages"].toString();
     var params = "fl=" + fields ;
     var limit = "&rows=" + SOLR_CONFIG["limit"];
